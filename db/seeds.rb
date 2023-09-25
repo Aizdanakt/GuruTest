@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 answers = [
-  { body: 'answer_1', correct: false, question_id: 1 },
-  { body: 'answer_2', correct: false, question_id: 3 },
-  { body: 'answer_3', correct: false, question_id: 1 }
+  { body: 'answer_1', correct: false },
+  { body: 'answer_2', correct: false },
+  { body: 'answer_3', correct: false }
 ]
 categories = [
   { title: 'category_1' },
@@ -11,14 +11,14 @@ categories = [
   { title: 'category_3' }
 ]
 questions = [
-  { body: 'question_1', test_id: 2 },
-  { body: 'question_2', test_id: 1 },
-  { body: 'question_3', test_id: 3 }
+  { body: 'question_1' },
+  { body: 'question_2' },
+  { body: 'question_3' }
 ]
 tests = [
-  { title: 'test_1', level: 2, category_id: 1, user_id: 3 },
-  { title: 'test_2', level: 3, category_id: 2, user_id: 3 },
-  { title: 'test_3', level: 3, category_id: 1, user_id: 1 }
+  { title: 'test_1', level: 2 },
+  { title: 'test_2', level: 3 },
+  { title: 'test_3', level: 3 }
 ]
 users = [
   { name: 'Name_1' },
@@ -26,8 +26,28 @@ users = [
   { name: 'Name_3' }
 ]
 
-users.each { |line| User.create(line) }
-categories.each { |line| Category.create(line) }
-tests.each { |line| Test.create(line) }
-questions.each { |line| Question.create(line) }
-answers.each { |line| Answer.create(line) }
+users_id = []
+categories_id = []
+tests_id = []
+questions_id = []
+
+users.each do |line|
+  users_id << User.create!(line).id
+end
+
+categories.each do |line|
+  categories_id << Category.create!(line).id
+end
+
+tests.each do |line|
+  tests_id << Test.create!(title: line[:title], level: line[:level],
+                           category_id: categories_id.pop, user_id: users_id.pop).id
+end
+
+questions.each do |line|
+  questions_id << Question.create!(body: line[:body], test_id: tests_id.pop).id
+end
+
+answers.each do |line|
+  Answer.create!(body: line[:body], correct: line[:correct], question_id: questions_id.pop)
+end
