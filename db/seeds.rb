@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# arrays with SEEDs to add to tables
 answers = [
   { body: 'answer_1', correct: false },
   { body: 'answer_2', correct: false },
@@ -25,29 +26,24 @@ users = [
   { name: 'Name_2' },
   { name: 'Name_3' }
 ]
-
-users_id = []
-categories_id = []
 tests_id = []
 questions_id = []
 
-users.each do |line|
-  users_id << User.create!(line).id
-end
+# adding data to tables and getting their identifiers
+users_id = User.create!(users).pluck(:id)
+categories_id = Category.create!(categories).pluck(:id)
 
-categories.each do |line|
-  categories_id << Category.create!(line).id
-end
+tests_id << Test.create!(title: tests[0][:title], level: tests[0][:level],
+                         category_id: categories_id.pop, user_id: users_id.pop).id
+tests_id << Test.create!(title: tests[1][:title], level: tests[1][:level],
+                         category_id: categories_id.pop, user_id: users_id.pop).id
+tests_id << Test.create!(title: tests[2][:title], level: tests[2][:level],
+                         category_id: categories_id.pop, user_id: users_id.pop).id
 
-tests.each do |line|
-  tests_id << Test.create!(title: line[:title], level: line[:level],
-                           category_id: categories_id.pop, user_id: users_id.pop).id
-end
+questions_id << Question.create!(body: questions[0][:body], test_id: tests_id.pop).id
+questions_id << Question.create!(body: questions[1][:body], test_id: tests_id.pop).id
+questions_id << Question.create!(body: questions[2][:body], test_id: tests_id.pop).id
 
-questions.each do |line|
-  questions_id << Question.create!(body: line[:body], test_id: tests_id.pop).id
-end
-
-answers.each do |line|
-  Answer.create!(body: line[:body], correct: line[:correct], question_id: questions_id.pop)
-end
+Answer.create!(body: answers[0][:body], correct: answers[0][:correct], question_id: questions_id.pop)
+Answer.create!(body: answers[1][:body], correct: answers[1][:correct], question_id: questions_id.pop)
+Answer.create!(body: answers[2][:body], correct: answers[2][:correct], question_id: questions_id.pop)
