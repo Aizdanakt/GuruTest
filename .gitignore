@@ -40,4 +40,4 @@
 /node_modules
 
 # DataBase
-test_guru.sqlite3
+/test_guru.sqlite3
