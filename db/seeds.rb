@@ -32,105 +32,123 @@ advanced_test_question_third = Question.create!(body: 'Entities can change their
                                                    source code - what is the name of this principle?', test_id: advanced_test.id)
 
 # answer options for basic_test_question_first
-Answer.create!(body: 'Extracts information from web pages',
-               correct: false, question_id: basic_test_question_first.id)
-Answer.create!(body: 'Adds an object-oriented layer of presentation logic to apps.',
-               correct: false, question_id: basic_test_question_first.id)
-Answer.create!(body: 'Provides an option for authentication',
-               correct: true, question_id: basic_test_question_first.id)
-Answer.create!(body: 'Allows you to run the server with the power of thought',
-               correct: false, question_id: basic_test_question_first.id)
+Answer.create!([
+                 { body: 'Extracts information from web pages',
+                   correct: false, question_id: basic_test_question_first.id },
+                 { body: 'Adds an object-oriented layer of presentation logic to apps.',
+                   correct: false, question_id: basic_test_question_first.id },
+                 { body: 'Provides an option for authentication',
+                   correct: true, question_id: basic_test_question_first.id },
+                 { body: 'Allows you to run the server with the power of thought',
+                   correct: false, question_id: basic_test_question_first.id }
+               ])
 
 # answer options for basic_test_question_second
-Answer.create!(body: 'Extracts information from web pages',
-               correct: true, question_id: basic_test_question_second.id)
-Answer.create!(body: 'Adds an object-oriented layer of presentation logic to apps.',
-               correct: false, question_id: basic_test_question_second.id)
-Answer.create!(body: 'Allows you to run the server with the power of thought',
-               correct: false, question_id: basic_test_question_second.id)
-Answer.create!(body: 'Provides an option for authentication',
-               correct: false, question_id: basic_test_question_second.id)
+Answer.create!([
+                 { body: 'Extracts information from web pages',
+                   correct: true, question_id: basic_test_question_second.id },
+                 { body: 'Adds an object-oriented layer of presentation logic to apps.',
+                   correct: false, question_id: basic_test_question_second.id },
+                 { body: 'Allows you to run the server with the power of thought',
+                   correct: false, question_id: basic_test_question_second.id },
+                 { body: 'Provides an option for authentication',
+                   correct: false, question_id: basic_test_question_second.id }
+               ])
 
 # answer options for basic_test_question_third
-Answer.create!(body: 'Provides an option for authentication',
-               correct: false, question_id: basic_test_question_third.id)
-Answer.create!(body: 'Adds an object-oriented layer of presentation logic to apps.',
-               correct: true, question_id: basic_test_question_third.id)
-Answer.create!(body: 'Extracts information from web pages',
-               correct: false, question_id: basic_test_question_third.id)
-Answer.create!(body: 'Allows you to run the server with the power of thought',
-               correct: false, question_id: basic_test_question_third.id)
-
+Answer.create!([
+                 { body: 'Provides an option for authentication',
+                   correct: false, question_id: basic_test_question_third.id },
+                 { body: 'Adds an object-oriented layer of presentation logic to apps.',
+                   correct: true, question_id: basic_test_question_third.id },
+                 { body: 'Extracts information from web pages',
+                   correct: false, question_id: basic_test_question_third.id },
+                 { body: 'Allows you to run the server with the power of thought',
+                   correct: false, question_id: basic_test_question_third.id }
+               ])
 
 # answer options for interm_test_question_first
-Answer.create!(body: 'Allows developers to create code that can be reused in different parts of an application',
-               correct: true, question_id: interm_test_question_first.id)
-Answer.create!(body: 'Reduces the amount of code that needs to be written and makes it easier to maintain the codebase',
-               correct: false, question_id: interm_test_question_first.id)
-Answer.create!(body: 'Allows you to automatically get to the interview',
-               correct: false, question_id: interm_test_question_first.id)
-Answer.create!(body: 'Allows developers to hide the implementation details of objects',
-               correct: false, question_id: interm_test_question_first.id)
+Answer.create!([
+                 { body: 'Allows developers to create code that can be reused in different parts of an application',
+                   correct: true, question_id: interm_test_question_first.id },
+                 { body: 'Reduces the amount of code that needs to be written and makes it easier to maintain the codebase',
+                   correct: false, question_id: interm_test_question_first.id },
+                 { body: 'Allows you to automatically get to the interview',
+                   correct: false, question_id: interm_test_question_first.id },
+                 { body: 'Allows developers to hide the implementation details of objects',
+                   correct: false, question_id: interm_test_question_first.id }
+               ])
 
 # answer options for interm_test_question_second
-Answer.create!(body: 'Allows developers to hide the implementation details of objects',
-               correct: true, question_id: interm_test_question_second.id)
-Answer.create!(body: 'Allows developers to create code that can be reused in different parts of an application',
-               correct: false, question_id: interm_test_question_second.id)
-Answer.create!(body: 'Allows you to automatically get to the interview',
-               correct: false, question_id: interm_test_question_second.id)
-Answer.create!(body: 'Reduces the amount of code that needs to be written and makes it easier to maintain the codebase',
-               correct: false, question_id: interm_test_question_second.id)
+Answer.create!([
+                 { body: 'Allows developers to hide the implementation details of objects',
+                   correct: true, question_id: interm_test_question_second.id },
+                 { body: 'Allows developers to create code that can be reused in different parts of an application',
+                   correct: false, question_id: interm_test_question_second.id },
+                 { body: 'Allows you to automatically get to the interview',
+                   correct: false, question_id: interm_test_question_second.id },
+                 { body: 'Reduces the amount of code that needs to be written and makes it easier to maintain the codebase',
+                   correct: false, question_id: interm_test_question_second.id }
+               ])
 
 # answer options for interm_test_question_third
-Answer.create!(body: 'Allows you to automatically get to the interview',
-               correct: false, question_id: interm_test_question_third.id)
-Answer.create!(body: 'Allows developers to create code that can be reused in different parts of an application',
-               correct: false, question_id: interm_test_question_third.id)
-Answer.create!(body: 'Allows developers to hide the implementation details of objects',
-               correct: false, question_id: interm_test_question_third.id)
-Answer.create!(body: 'Reduces the amount of code that needs to be written and makes it easier to maintain the codebase',
-               correct: true, question_id: interm_test_question_third.id)
-
+Answer.create!([
+                 { body: 'Allows you to automatically get to the interview',
+                   correct: false, question_id: interm_test_question_third.id },
+                 { body: 'Allows developers to create code that can be reused in different parts of an application',
+                   correct: false, question_id: interm_test_question_third.id },
+                 { body: 'Allows developers to hide the implementation details of objects',
+                   correct: false, question_id: interm_test_question_third.id },
+                 { body: 'Reduces the amount of code that needs to be written and makes it easier to maintain the codebase',
+                   correct: true, question_id: interm_test_question_third.id }
+               ])
 
 # answer options for advanced_test_question_first
-Answer.create!(body: 'Linus Torvalds',
-               correct: false, question_id: advanced_test_question_first.id)
-Answer.create!(body: 'Yukihiro Matsumoto',
-               correct: false, question_id: advanced_test_question_first.id)
-Answer.create!(body: 'Robert Martin',
-               correct: true, question_id: advanced_test_question_first.id)
-Answer.create!(body: 'David Hansson',
-               correct: false, question_id: advanced_test_question_first.id)
+Answer.create!([
+                 { body: 'Linus Torvalds',
+                   correct: false, question_id: advanced_test_question_first.id },
+                 { body: 'Yukihiro Matsumoto',
+                   correct: false, question_id: advanced_test_question_first.id },
+                 { body: 'Robert Martin',
+                   correct: true, question_id: advanced_test_question_first.id },
+                 { body: 'David Hansson',
+                   correct: false, question_id: advanced_test_question_first.id }
+               ])
 
 # answer options for advanced_test_question_second
-Answer.create!(body: 'Functions that use the base type should be able to use
+Answer.create!([
+                 { body: 'Functions that use the base type should be able to use
                       subtypes of the base type without knowing about it.',
-               correct: false, question_id: advanced_test_question_second.id)
-Answer.create!(body: 'Denotes that each object should have one duty',
-               correct: true, question_id: advanced_test_question_second.id)
-Answer.create!(body: 'Clients should not depend on methods they do not use',
-               correct: false, question_id: advanced_test_question_second.id)
-Answer.create!(body: 'The modules of the upper levels should not depend on the modules of the lower levels',
-               correct: false, question_id: advanced_test_question_second.id)
+                   correct: false, question_id: advanced_test_question_second.id },
+                 { body: 'Denotes that each object should have one duty',
+                   correct: true, question_id: advanced_test_question_second.id },
+                 { body: 'Clients should not depend on methods they do not use',
+                   correct: false, question_id: advanced_test_question_second.id },
+                 { body: 'The modules of the upper levels should not depend on the modules of the lower levels',
+                   correct: false, question_id: advanced_test_question_second.id }
+               ])
 
 # answer options for advanced_test_question_third
-Answer.create!(body: 'Interface segregation principle',
-               correct: false, question_id: advanced_test_question_third.id)
-Answer.create!(body: 'Open-closed principle',
-               correct: true, question_id: advanced_test_question_third.id)
-Answer.create!(body: 'Dependency inversion principle',
-               correct: false, question_id: advanced_test_question_third.id)
-Answer.create!(body: 'Single responsibility principle',
-               correct: false, question_id: advanced_test_question_third.id)
+Answer.create!([
+                 { body: 'Interface segregation principle',
+                   correct: false, question_id: advanced_test_question_third.id },
+                 { body: 'Open-closed principle',
+                   correct: true, question_id: advanced_test_question_third.id },
+                 { body: 'Dependency inversion principle',
+                   correct: false, question_id: advanced_test_question_third.id },
+                 { body: 'Single responsibility principle',
+                   correct: false, question_id: advanced_test_question_third.id }
+               ])
 
 # creating passing tests for Users
-UserPassedTest.create!(user_id: john.id, test_id: basic_test.id, test_status: 'passing')
-UserPassedTest.create!(user_id: john.id, test_id: intermediate_test.id, test_status: 'passing')
-UserPassedTest.create!(user_id: john.id, test_id: advanced_test.id, test_status: 'passed')
-UserPassedTest.create!(user_id: ivan.id, test_id: basic_test.id, test_status: 'passed')
-UserPassedTest.create!(user_id: ivan.id, test_id: intermediate_test.id, test_status: 'passed')
-UserPassedTest.create!(user_id: ivan.id, test_id: advanced_test.id, test_status: 'passing')
-UserPassedTest.create!(user_id: hans.id, test_id: basic_test.id, test_status: 'passing')
-UserPassedTest.create!(user_id: hans.id, test_id: intermediate_test.id, test_status: 'passed')
-UserPassedTest.create!(user_id: hans.id, test_id: advanced_test.id, test_status: 'passing')
+UserPassedTest.create!([
+                         { user_id: john.id, test_id: basic_test.id },
+                         { user_id: john.id, test_id: intermediate_test.id },
+                         { user_id: john.id, test_id: advanced_test.id },
+                         { user_id: ivan.id, test_id: basic_test.id },
+                         { user_id: ivan.id, test_id: intermediate_test.id },
+                         { user_id: ivan.id, test_id: advanced_test.id },
+                         { user_id: hans.id, test_id: basic_test.id },
+                         { user_id: hans.id, test_id: intermediate_test.id },
+                         { user_id: hans.id, test_id: advanced_test.id }
+                       ])
