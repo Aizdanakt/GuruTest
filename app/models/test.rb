@@ -14,10 +14,13 @@ class Test < ApplicationRecord
                                      joins(:category)
                                        .where(categories: { title: category_title })
                                        .order(id: :desc)
-                                       .pluck(:title)
                                    }
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
+
+  def self.array_of_sorted_tests(category_title)
+    sorted_tests_by_category(category_title).pluck(:title)
+  end
 end
