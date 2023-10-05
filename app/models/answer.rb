@@ -6,6 +6,8 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
+  private
+
   def validate_answer_count
     return unless question.answers.count > 3
 

@@ -4,3 +4,6 @@ require:
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.0.6
+
+Metrics/LineLength:
+  Max: 200
