@@ -6,4 +6,5 @@ AllCops:
   TargetRubyVersion: 3.0.6
 
 Metrics/LineLength:
-  Max: 200
+  Max: 120
+  
