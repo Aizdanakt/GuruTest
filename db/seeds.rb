@@ -117,8 +117,8 @@ Answer.create!([
 
 # answer options for advanced_test_question_second
 Answer.create!([
-                 { body: 'Functions that use the base type should be able to use
-                      subtypes of the base type without knowing about it.',
+                 { body: 'Functions that use the base type should be able to use subtypes
+/ of the base type without knowing about it.',
                    correct: false, question: advanced_test_question_second },
                  { body: 'Denotes that each object should have one duty',
                    correct: true, question: advanced_test_question_second },
