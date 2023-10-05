@@ -40,6 +40,8 @@ gem 'jbuilder'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'rubocop', '~> 1.56', require: false
+gem 'rubocop-performance', '~> 1.11', require: false
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
