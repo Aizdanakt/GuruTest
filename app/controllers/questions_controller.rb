@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @test.questions
-    render plain: { questions: @questions }
   end
 
   def show
@@ -27,6 +26,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @question = Question.find(params[:id])
     @question.destroy
     render plain: 'success'
   end
@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def find_test

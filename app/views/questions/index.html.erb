@@ -1,0 +1,16 @@
+<h1 class="mb-4">Questions</h1>
+
+<% @questions.each do |question| %>
+  <article class="card mt-3">
+    <div class="card-body">
+        <section>
+          <p class="my-2">
+            <%= question.body %>
+          </p>
+        </section>
+
+        <%= link_to 'Show', question_path(question), class: 'btn btn-primary' %>
+        <%= button_to "Delete", question_path(question), class: 'btn btn-danger', method: :delete %>
+    </div>
+  </article>
+<% end %>
