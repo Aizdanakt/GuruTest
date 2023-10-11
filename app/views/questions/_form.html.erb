@@ -1,0 +1,8 @@
+<%= form_with model: [@test, @question], url: action_url do |f| %>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_field :body, id: :question_body %>
+  </p>
+
+  <p><%= f.submit %></p>
+<% end %>

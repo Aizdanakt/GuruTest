@@ -1,0 +1,26 @@
+<h1 class="mb-4">Test</h1>
+<div style="margin-bottom: 30px">
+  <article class="card mt-3">
+    <section>
+      <p class="my-10">
+        Title:  <%= @test.title %>  <p>Level: <%= @test.level %></p>
+      </p>
+    </section>
+  </article>
+</div>
+<% @questions.each do |question| %>
+  <article class="card mt-3">
+    <div class="card-body">
+      <section>
+        <p class="my-2">
+          <%= question.body %>
+        </p>
+      </section>
+
+      <%= link_to 'Show', question_path(question), class: 'btn btn-primary' %>
+      <%= link_to 'Update', edit_question_path(question), class: 'btn btn-warning' %>
+      <%= link_to "Delete", question_path(question),class: 'btn btn-danger',
+                  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </div>
+  </article>
+<% end %>
