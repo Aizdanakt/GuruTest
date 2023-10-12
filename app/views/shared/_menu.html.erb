@@ -2,19 +2,19 @@
     <a class="navbar-brand" href="#">Панель навигации</a>
     <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href='<%= tests_path %>'>Тесты</a>
+          <a class="nav-link" href='<%= root_path %>'>Тесты</a>
         </li>
-        <%if @tests.present? %>
+        <% if @tests.present? %>
           <li class="nav-item">
             <a class="nav-link" href='<%= new_test_path %>'>Создать тест</a>
           </li>
-        <%elsif @questions.present? %>
+        <% elsif @questions.present? || @questions != nil %>
           <li class="nav-item">
             <a class="nav-link" href='<%= new_test_question_path(@test) %>'>Создать вопрос для теста </a>
           </li>
-        <%elsif @test.present? %>
+        <% elsif @question != nil %>
           <li class="nav-item">
-            <a class="nav-link" href='<%= test_path(@test) %>'>Вопросы теста</a>
+            <a class="nav-link" href='<%= test_path(@question) %>'>Вопросы теста</a>
           </li>
         <% end %>
 

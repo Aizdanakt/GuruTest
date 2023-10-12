@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.build question_params
+    @question = @test.questions.build(question_params)
     if @question.save
       redirect_to @question
     else
@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def update
-    if @question.update question_params
+    if @question.update(question_params)
       redirect_to @question
     else
       render :edit
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_questions_path(@question.test_id)
+    redirect_to test_path
   end
 
   private
