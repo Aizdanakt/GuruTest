@@ -12,9 +12,9 @@
           <li class="nav-item">
             <a class="nav-link" href='<%= new_test_question_path(@test) %>'>Создать вопрос для теста </a>
           </li>
-        <%elsif @question.present? %>
+        <%elsif @test.present? %>
           <li class="nav-item">
-            <a class="nav-link" href='<%= test_questions_path(test_id: @question.test_id) %>'>Вопросы теста</a>
+            <a class="nav-link" href='<%= test_path(@test) %>'>Вопросы теста</a>
           </li>
         <% end %>
 

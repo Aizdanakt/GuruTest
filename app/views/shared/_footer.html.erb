@@ -3,9 +3,9 @@
 
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>
-        &copy; <%= current_year %>, Aziret, <%= github_url %>
+        &copy; <%= current_year %>, Aziret, <%= github_url(TestGuru, 'https://github.com/Aizdanakt/TestGuru') %>
         - Create, explore, unlock - tests that inspire! Educational project at the online school
-        <a href='https://thinknetica.com/'>Thinknetica</a>
+        <%= link_to 'Thinknetica', 'https://thinknetica.com/', target: '_blank' %>
       </p>
     </div>
   </footer>

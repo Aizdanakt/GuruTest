@@ -1,2 +1,2 @@
-<h1><%= question_header('edit') %></h1>
-<%= render 'form', model: @question, action_url: question_path(@question), test_id: @question.test.id %>
+<h1><%= question_header(@question) %></h1>
+<%= render 'form', model: @question, test_id: @question.test.id %>

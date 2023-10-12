@@ -15,7 +15,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new test_params
-    if @question.save
+    if @test.save
       redirect_to @test
     else
       render :new
