@@ -41,3 +41,6 @@
 
 # DataBase
 /test_guru.sqlite3
+
+# other files
+/.idea

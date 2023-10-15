@@ -1,33 +1,37 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_test, only: %i[new create]
+  before_action :find_question, only: %i[show destroy update edit]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_questions_not_found
 
-  def index
-    @questions = @test.questions
-  end
-
-  def show
-    render inline: '<%= @question.body %>'
-  end
+  def show; end
 
   def new
     @question = Question.new
   end
 
   def create
-    @question = @test.questions.build question_params
+    @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to question_path(@question.test_id)
+      redirect_to @question
     else
       render :new
     end
   end
 
+  def edit; end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @question.destroy
-    redirect_to test_questions_path(@question.test_id)
+    redirect_to test_path
   end
 
   private
@@ -45,6 +49,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_questions_not_found
-    render plain: 'Questions not found'
+    render inline: "Questions not found"
   end
 end
