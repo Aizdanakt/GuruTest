@@ -4,28 +4,27 @@
         <li class="nav-item">
           <a class="nav-link" href='<%= root_path %>'>Тесты</a>
         </li>
-        <% if @tests.present? %>
+        <% case
+           when controller_name == 'tests' && action_name == 'index' %>
           <li class="nav-item">
             <a class="nav-link" href='<%= new_test_path %>'>Создать тест</a>
           </li>
-        <% elsif @questions.present? || @questions != nil %>
+        <% when controller_name == 'tests' && action_name == 'show' %>
           <li class="nav-item">
             <a class="nav-link" href='<%= new_test_question_path(@test) %>'>Создать вопрос</a>
           </li>
-        <% elsif @question != nil %>
+        <% when controller_name == 'questions' && action_name == 'show' %>
           <li class="nav-item">
-            <a class="nav-link" href='<%= test_path(params[:test_id] || @question) %>'>Вопросы теста</a>
+            <a class="nav-link" href='<%= test_path(id: @question.test_id) %>'>Вопросы теста</a>
           </li>
-        <% elsif @answer != nil %>
+
+          <li class="nav-item">
+            <a class="nav-link" href='<%= new_question_answer_path(@question.id) %>'>Создать ответ</a>
+          </li>
+        <% when controller_name == 'answers' && action_name == 'show' %>
           <li class="nav-item">
             <a class="nav-link" href='<%= question_path(@answer.question_id) %>'>Ответы вопроса</a>
           </li>
         <% end %>
-        <% if controller_name == 'questions' && action_name == 'show' %>
-          <li class="nav-item">
-            <a class="nav-link" href='<%= new_question_answer_path(@question.id) %>'>Создать ответ</a>
-          </li>
-        <% end %>
-
     </ul>
 </nav>

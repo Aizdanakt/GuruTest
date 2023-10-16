@@ -88,6 +88,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.8, asdf: 3.0.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.2.0, asdf: 3.0.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.0, asdf: 3.0.6) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-i18n (v7.0.8, asdf: 3.0.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v7.0.8, asdf: 3.0.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, asdf: 3.0.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, asdf: 3.0.6) [gem]" level="application" />
