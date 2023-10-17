@@ -1,10 +1,9 @@
 module UserPassedTestsHelper
 
-  def views_result(result)
-    "<h3>Success percentage:<span class=#{if result[1] >= result[0]
-                                            'text-success'
-                                          else
-                                            'text-danger'
-                                          end}> #{result[1]} </span></h3>".html_safe
+  def views_result(user_passed_test)
+    percentage = user_passed_test.success_percentage(user_passed_test)
+    color_class = user_passed_test.success?(percentage) ? 'text-success' : 'text-danger'
+    "<h3>Success percentage:<span class=#{color_class}> #{percentage} </span></h3>".html_safe
   end
+
 end

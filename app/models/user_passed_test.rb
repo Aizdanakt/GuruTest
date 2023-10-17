@@ -19,21 +19,17 @@ class UserPassedTest < ApplicationRecord
   def success_percentage(user_passed_test)
     total_answers = user_passed_test.test.questions.count
     correct_answers = user_passed_test.correct_questions
-    test_result(((correct_answers.to_f / total_answers) * 100).to_i)
+    ((correct_answers.to_f / total_answers) * 100).to_i
+  end
+
+  def success?(percentage)
+    percentage >= SUCCESS_RATIO
   end
 
   private
 
-  def test_result(success_percentage)
-    [SUCCESS_RATIO, success_percentage]
-  end
-
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == if answer_ids.nil?
-                                  false
-                                else
-                                  answer_ids.map(&:to_i).sort
-                                end
+    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   def correct_answers
