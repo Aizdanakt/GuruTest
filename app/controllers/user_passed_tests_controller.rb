@@ -11,7 +11,6 @@ class UserPassedTestsController < ApplicationController
     if @user_passed_test.completed?
       redirect_to result_user_passed_test_path(@user_passed_test)
     else
-      puts @user_passed_test.inspect
       redirect_to user_passed_test_path(@user_passed_test)
     end
   end
