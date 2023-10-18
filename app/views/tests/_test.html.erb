@@ -16,5 +16,6 @@
     <%= link_to 'Update', edit_test_path(test), class: 'btn btn-warning' %>
     <%= link_to "Delete", test_path(test),class: 'btn btn-danger',
                 data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    <%= button_to 'Start', start_test_path(test), class: 'btn btn-success' %>
   </div>
 </article>

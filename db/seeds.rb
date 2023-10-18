@@ -142,13 +142,7 @@ Answer.create!([
 
 # creating passing tests for Users
 UserPassedTest.create!([
-                         { user: john, test: basic_test },
-                         { user: john, test: intermediate_test },
-                         { user: john, test: advanced_test },
-                         { user: ivan, test: basic_test },
-                         { user: ivan, test: intermediate_test },
-                         { user: ivan, test: advanced_test },
-                         { user: hans, test: basic_test },
-                         { user: hans, test: intermediate_test },
-                         { user: hans, test: advanced_test }
+                         { user: john, test: basic_test, current_question: basic_test_question_first },
+                         { user: ivan, test: basic_test, current_question: interm_test_question_first },
+                         { user: hans, test: basic_test, current_question: advanced_test_question_first }
                        ])

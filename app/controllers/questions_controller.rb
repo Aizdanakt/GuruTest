@@ -49,6 +49,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_questions_not_found
-    render inline: "Questions not found"
+    render inline: 'Questions not found'
   end
 end
