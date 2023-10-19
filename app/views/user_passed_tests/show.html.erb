@@ -8,7 +8,7 @@
     Всего вопросов: <b><%= @user_passed_test.test.questions.size %></b>
   </p>
   <p>
-    Номер вопроса: <b><%= @user_passed_test.current_question.id %></b>
+    Номер вопроса: <b><%= @user_passed_test.test.questions.index(@user_passed_test.current_question) + 1 %></b>
   </p>
 </div>
 

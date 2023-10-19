@@ -1,30 +1,46 @@
 <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
-    <a class="navbar-brand" href="#">Панель навигации</a>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href='<%= root_path %>'>Тесты</a>
-        </li>
-        <% case
-           when controller_name == 'tests' && action_name == 'index' %>
-          <li class="nav-item">
-            <a class="nav-link" href='<%= new_test_path %>'>Создать тест</a>
-          </li>
-        <% when controller_name == 'tests' && action_name == 'show' %>
-          <li class="nav-item">
-            <a class="nav-link" href='<%= new_test_question_path(@test) %>'>Создать вопрос</a>
-          </li>
-        <% when controller_name == 'questions' && action_name == 'show' %>
-          <li class="nav-item">
-            <a class="nav-link" href='<%= test_path(id: @question.test_id) %>'>Вопросы теста</a>
-          </li>
+  <ul class="nav nav-pills">
+    <% if logged_in? %>
+      <li class="nav-item">
+        <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to 'Login', login_path, method: :delete, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Signup', signup_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% end %>
 
-          <li class="nav-item">
-            <a class="nav-link" href='<%= new_question_answer_path(@question.id) %>'>Создать ответ</a>
-          </li>
-        <% when controller_name == 'answers' && action_name == 'show' %>
-          <li class="nav-item">
-            <a class="nav-link" href='<%= question_path(@answer.question_id) %>'>Ответы вопроса</a>
-          </li>
-        <% end %>
-    </ul>
+    <li class="nav-item">
+      <a class="nav-link" href='<%= root_path %>'>Test Guru</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href='<%= test_path(id: 1) %>'>О проекте</a>
+    </li>
+
+    <% case
+       when controller_name == 'tests' && action_name == 'index' %>
+      <li class="nav-item">
+        <a class="nav-link" href='<%= new_test_path %>'>Создать тест</a>
+      </li>
+    <% when controller_name == 'tests' && action_name == 'show' %>
+      <li class="nav-item">
+        <a class="nav-link" href='<%= new_test_question_path(@test) %>'>Создать вопрос</a>
+      </li>
+    <% when controller_name == 'questions' && action_name == 'show' %>
+      <li class="nav-item">
+        <a class="nav-link" href='<%= test_path(id: @question.test_id) %>'>Вопросы теста</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href='<%= new_question_answer_path(@question.id) %>'>Создать ответ</a>
+      </li>
+    <% when controller_name == 'answers' && action_name == 'show' %>
+      <li class="nav-item">
+        <a class="nav-link" href='<%= question_path(@answer.question_id) %>'>Ответы вопроса</a>
+      </li>
+    <% end %>
+  </ul>
 </nav>

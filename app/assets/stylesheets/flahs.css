@@ -1,0 +1,18 @@
+.flash {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.error {
+  color: red;
+  border-color: red;
+}
+
+.success {
+  border-color: green;
+  color: green;
+}
+.alert {
+    border-color: yellow;
+    color: yellow;
+}
