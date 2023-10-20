@@ -4,8 +4,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name} Guru!"
-      redirect_to cookies['redirect_url'] || root_path
-      cookies.delete :redirect_url
+      redirect_to cookies.delete(:redirect_url) || root_path
     else
       flash[:error] = 'Invalid name or password!'
       redirect_to login_path
