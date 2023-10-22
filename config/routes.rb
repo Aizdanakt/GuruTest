@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
+
   root 'tests#index'
 
   resources :tests do
@@ -11,13 +15,4 @@ Rails.application.routes.draw do
   resources :user_passed_tests, only: %i[show update] do
     get :result, on: :member
   end
-
-  get :signup, to: 'users#new'
-
-  resources :users, only: :create
-
-  get :login, to: 'sessions#new'
-  delete :logout, to: 'sessions#destroy'
-
-  resources :sessions, only: :create
 end
