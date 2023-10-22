@@ -1,9 +1,12 @@
 class User < ApplicationRecord
+  EMAIL_FORMAT = %r{\A[a-zA-Z0-9.!\#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+\z}
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
   has_many :user_passed_tests, dependent: :destroy
   has_many :tests, through: :user_passed_tests
 
-  validates :email, presence: true
+  validates :email, format: { with: EMAIL_FORMAT }
+  validates :email, uniqueness: true
+  has_secure_password
 
   def user_tests_by_level(level)
     tests.where(level: level)

@@ -1,23 +1,23 @@
-<h1>Passing the <%= @user_passed_test.test.title %> Test</h1>
+<h1 class="text-success">Passing the <%= @user_passed_test.test.title %> Test</h1>
 
-<div style="margin-bottom: 10px">
+<div class="mb-4">
   <p>
-    <b><%= @user_passed_test.current_question.body %></b>
+    <strong><%= @user_passed_test.current_question.body %></strong>
   </p>
   <p>
-    Всего вопросов: <b><%= @user_passed_test.test.questions.size %></b>
+    Total Questions: <strong><%= @user_passed_test.test.questions.size %></strong>
   </p>
   <p>
-    Номер вопроса: <b><%= @user_passed_test.current_question.id %></b>
+    Question Number: <strong><%= @user_passed_test.question_number(@user_passed_test) %></strong>
   </p>
 </div>
 
 <%= form_with url: user_passed_test_path(@user_passed_test), local: false, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @user_passed_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
+    <div class="form-check">
+      <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input" %>
+      <%= b.label class: "form-check-label" %>
+    </div>
   <% end %>
 
   <p><%= form.submit 'Next', class: 'btn btn-primary' %></p>

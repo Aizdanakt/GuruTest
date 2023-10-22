@@ -26,6 +26,10 @@ class UserPassedTest < ApplicationRecord
     percentage >= SUCCESS_RATIO
   end
 
+  def question_number(resource)
+    resource.test.questions.index(resource.current_question) + 1
+  end
+
   private
 
   def correct_answer?(answer_ids)
