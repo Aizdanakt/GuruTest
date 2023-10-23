@@ -9,8 +9,16 @@
   </div>
 
   <div class="mb-3">
+    <%= form.label :surname, class: 'form-label' %>
+    <%= form.text_field :surname, id: :user_surname, class: 'form-control', required: true %>
+    <div class="invalid-feedback">
+      Please enter a valid surname address.
+    </div>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :email, class: 'form-label' %>
-    <%= form.text_field :email, id: :user_email, class: 'form-control', required: true %>
+    <%= form.email_field :email, id: :user_email, class: 'form-control', required: true %>
     <div class="invalid-feedback">
       Please enter a valid email address.
     </div>
