@@ -22,11 +22,9 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = current_user.created_tests.build(test_params)
-    puts current_user.inspect
     if @test.save
       redirect_to admin_tests_path(@test)
     else
-      puts current_user.inspect
       render :new
     end
   end

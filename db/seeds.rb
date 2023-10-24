@@ -7,10 +7,9 @@ advanced_category = Category.create!(title: 'advanced')
 
 # creating users
 john = User.create!(name: 'John', email: 'john@test.com', password: 'johnjohn')
-ivan = User.create!(name: 'Ivan', email: 'ivan1@test.com', password: 'ivanivan')
+ivan = User.create!(name: 'admin', email: 'admin@test.com', password: 'adminadmin', type: 'Admin', first_name: 'fn', last_name: 'ln')
 hans = User.create!(name: 'Hans', email: 'hans@test.com', password: 'hanshans')
 
-# creating tests
 basic_test = Test.create!(title: 'Ruby gems', level: 1, category: basic_category, author: john)
 intermediate_test = Test.create!(title: 'OOP', level: 2, category: intermediate_category, author: ivan)
 advanced_test = Test.create!(title: 'SOLID', level: 3, category: advanced_category, author: hans)
