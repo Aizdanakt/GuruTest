@@ -14,8 +14,6 @@
     <%= f.collection_select :category_id, Category.all, :id, :title, { prompt: true }, class: 'form-select' %>
   </div>
 
-  <%= f.hidden_field :author_id, value: current_user.id %>
-
   <div class="mb-3">
     <%= f.submit 'Submit Test!', class: 'btn btn-success' %>
   </div>
