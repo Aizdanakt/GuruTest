@@ -57,6 +57,8 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  # gem 'byebug'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -77,6 +79,6 @@ group :test do
 
 end
 
-gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'hotwire-rails', '~> 0.1.3'
 gem 'rails-i18n'

@@ -1,0 +1,16 @@
+<article class="card mt-3">
+  <div class="card-body">
+    <section>
+      <p class="my-2">
+        Title: <%= test.title %>
+      </p>
+      <p class="my-2">
+        Level: <%= test.level %>
+      </p>
+      <p class="my-2">
+        Number of questions: <%= test.questions.count %>
+      </p>
+    </section>
+    <%= button_to 'Start', start_user_test_path(test), class: 'btn btn-success' %>
+  </div>
+</article>
