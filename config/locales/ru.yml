@@ -69,3 +69,5 @@ ru:
     sessions:
       form:
         create: "Войти"
+      new:
+        header: "Войдите во врата Гуру"

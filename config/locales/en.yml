@@ -69,3 +69,5 @@ en:
     sessions:
       form:
         create: "Sign in"
+      new:
+        header: "Enter the Guru Gates"
