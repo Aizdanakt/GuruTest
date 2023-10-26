@@ -8,6 +8,9 @@ en:
         create: "Create Test"
         update: "Update Test"
 
+    select:
+      prompt: "Please select: "
+
     label:
       test:
         title: "Title"
@@ -58,3 +61,11 @@ en:
       logout_header: "Logout"
       login_header: "Login"
       signup_header: "Signup"
+
+  users:
+    registrations:
+      new:
+        create: "Sign up"
+    sessions:
+      form:
+        create: "Sign in"

@@ -8,9 +8,8 @@ ru:
         create: "Создать Тест"
         update: "Обновить Тест"
 
-      user:
-        create: "Зарегистрироваться"
-        login: "Войти"
+    select:
+      prompt: "Выберите: "
 
     label:
       test:
@@ -62,3 +61,11 @@ ru:
       logout_header: "Выход"
       login_header: "Войти"
       signup_header: "Регистрация"
+
+  users:
+    registrations:
+      new:
+        create: "Зарегистрироваться"
+    sessions:
+      form:
+        create: "Войти"
