@@ -1,11 +1,11 @@
-<h1>Тест завершен!</h1>
+<h1><%= t('.header', title: @user_passed_test.test.title) %></h1>
 <%= views_result(@user_passed_test) %>
 <table class="table">
   <thead>
   <tr>
-    <th>Questions</th>
-    <th>Answers</th>
-    <th>Correctness</th>
+    <th><%= t(".question_header") %></th>
+    <th><%= t(".answers_header") %></th>
+    <th><%= t(".correctness_header") %></th>
   </tr>
   </thead>
   <tbody>

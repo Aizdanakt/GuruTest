@@ -1,33 +1,73 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  hello: "Hello world!"
+  percentage: "Success percentage"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+
+    select:
+      prompt: "Please select: "
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  user:
+    tests:
+      index:
+        header: "Tricky Tests"
+      test:
+        title: "Title"
+        level: "Level"
+        number: "Number of questions"
+
+    user_passed_tests:
+      result:
+        header: "Test %{title} was successfully completed!"
+        question_header: "Questions"
+        answers_header: "Answers"
+        correctness_header: "Correctness"
+      show:
+        header: "Passing the %{title} test"
+        count: "Total questions"
+        number: "Question number"
+        next_button: "Next question"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tricky Tests"
+      test:
+        title: "Title"
+        level: "Level"
+        number: "Number of questions"
+      show:
+        header: "Title"
+        level: "Level"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  shared:
+    login_links:
+      logout_header: "Logout"
+      login_header: "Login"
+      signup_header: "Signup"
+
+  users:
+    registrations:
+      new:
+        create: "Sign up"
+    sessions:
+      form:
+        create: "Sign in"
+      new:
+        header: "Enter the Guru Gates"

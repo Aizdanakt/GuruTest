@@ -1,2 +1,73 @@
 ru:
-  hello: "Hello world"
+  hello: "Привет мир!"
+  percentage: "Процент успешных ответов"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+
+    select:
+      prompt: "Выберите: "
+
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  user:
+    tests:
+      index:
+        header: "Доступные тесты"
+      test:
+        title: "Название"
+        level: "Уровень"
+        number: "Количество вопросов"
+
+    user_passed_tests:
+      result:
+        header: "Тест %{title} успешно завершен!"
+        question_header: "Вопросы"
+        answers_header: "Ответы"
+        correctness_header: "Результат"
+      show:
+        header: "Прохождение теста %{title}"
+        count: "Всего вопросов"
+        number: "Номер вопроса"
+        next_button: "Следующий вопрос"
+
+  admin:
+    tests:
+      create:
+        success: "Тест был успешно создан"
+      index:
+        header: "Доступные тесты"
+      test:
+        title: "Название"
+        level: "Уровень"
+        number: "Количество вопросов"
+      show:
+        header: "Название"
+        level: "Уровень"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  shared:
+    login_links:
+      logout_header: "Выход"
+      login_header: "Войти"
+      signup_header: "Регистрация"
+
+  users:
+    registrations:
+      new:
+        create: "Зарегистрироваться"
+    sessions:
+      form:
+        create: "Войти"
+      new:
+        header: "Войдите во врата Гуру"
