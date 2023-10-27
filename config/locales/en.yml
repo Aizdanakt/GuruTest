@@ -65,7 +65,9 @@ en:
   users:
     registrations:
       new:
+        header: "Registration"
         create: "Sign up"
+        chapters: "chapters minimum"
     sessions:
       form:
         create: "Sign in"

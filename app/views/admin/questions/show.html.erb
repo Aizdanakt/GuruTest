@@ -1,10 +1,19 @@
-<h1><%= @question.test.title %> Question</h1>
 
-<p>
-  <b><%= @question.body %></b>
-</p>
+<div style="margin-bottom: 30px">
+  <article class="card mt-3" style="border-color: #e3f2fd">
+    <div class="card-body">
+      <p class="my-2">
+        <h3><%= @question.test.title %> Question</h3>
+      </p>
 
-<h2>Answers</h2>
-<ol>
+      <p class="my-10">
+        <h5><%= @question.body %></h5>
+      </p>
+    </div>
+  </article>
+</div>
+
+<section>
+  <h2>Answers</h2>
   <%= render @question.answers %>
-</ol>
+</section>

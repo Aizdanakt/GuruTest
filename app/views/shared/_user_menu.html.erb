@@ -1,9 +1,17 @@
 <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
   <ul class="nav nav-pills">
-    <%= render 'shared/login_links' %>
 
     <li class="nav-item">
-      <a class="nav-link" href='<%= root_path %>'>Test Guru</a>
+      <a class="nav-link text-white" href='<%= root_path %>'>Test Guru</a>
     </li>
+
+  </ul>
+
+  <ul class="nav ml-auto">
+
+    <li class="nav-item">
+      <%= render 'shared/login_links' %>
+    </li>
+
   </ul>
 </nav>
