@@ -1,12 +1,15 @@
 <% if user_signed_in? %>
   <li class="nav-item">
-    <%= link_to t(".logout_header"), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'nav-link' %>
+    <%= link_to t(".logout_header"), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'nav-link text-white' %>
   </li>
 <% else %>
   <li class="nav-item">
-    <%= link_to t(".login_header"), user_session_path, method: :delete, class: 'nav-link' %>
+    <%= link_to t(".login_header"), user_session_path, method: :delete, class: 'nav-link text-white' %>
   </li>
   <li class="nav-item">
-    <%= link_to t(".signup_header"), new_user_registration_path, method: :delete, class: 'nav-link' %>
+    <span class="nav-link text-white">|</span>
+  </li>
+  <li class="nav-item">
+    <%= link_to t(".signup_header"), new_user_registration_path, method: :delete, class: 'nav-link text-white' %>
   </li>
 <% end %>

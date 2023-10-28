@@ -14,7 +14,12 @@
   <body>
     <%= render 'shared/user_menu' %>
     <main class="container mt-3">
-      <%= display_flash_messages %>
+
+      <div class="container">
+        <%= display_flash_messages %>
+      </div>
+
+
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>

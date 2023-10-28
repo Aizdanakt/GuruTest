@@ -1,11 +1,12 @@
-<h1 class="mb-4">Test</h1>
+<h2 class="mb-4">Test</h2>
 <div style="margin-bottom: 30px">
-  <article class="card mt-3">
-    <section>
+  <article class="card mt-3" style="border-color: #e3f2fd">
+    <div class="card-body">
       <p class="my-10">
         <%= t(".header") %>: <%= @test.title %>  <p><%= t(".level") %>: <%= @test.level %></p>
       </p>
-    </section>
+    </div>
   </article>
 </div>
+<h2 class="mb-4">Questions</h2>
 <%= render @questions %>

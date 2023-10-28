@@ -65,7 +65,9 @@ ru:
   users:
     registrations:
       new:
+        header: "Регистрация"
         create: "Зарегистрироваться"
+        chapters: "символов минимум"
     sessions:
       form:
         create: "Войти"
