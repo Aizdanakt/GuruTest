@@ -37,6 +37,9 @@ en:
         count: "Total questions"
         number: "Question number"
         next_button: "Next question"
+      gist:
+        success: "Gist was successfully created!"
+        failure: "An error occurred while saving gist"
 
   admin:
     tests:

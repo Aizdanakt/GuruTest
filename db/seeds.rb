@@ -27,8 +27,8 @@ interm_test_question_third = Question.create!(body: 'What is the advantage of In
 # creating questions for advanced_test
 advanced_test_question_first = Question.create!(body: 'Who came up with the abbreviation SOLID?', test: advanced_test)
 advanced_test_question_second = Question.create!(body: 'What does the principle single responsibility mean?', test: advanced_test)
-advanced_test_question_third = Question.create!(body: 'Entities can change their behavior without changing their
-                                                   source code - what is the name of this principle?', test: advanced_test)
+advanced_test_question_third = Question.create!(
+  body: 'Entities can change their behavior without changing their source code - what is the name of this principle?', test: advanced_test)
 
 # answer options for basic_test_question_first
 Answer.create!([

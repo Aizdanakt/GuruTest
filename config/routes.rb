@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :user_passed_tests, only: %i[show update] do
       get :result, on: :member
+      post :gist, on: :member
     end
 
     resources :tests, only: :index do
