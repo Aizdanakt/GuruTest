@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
   has_many :user_passed_tests, dependent: :destroy
   has_many :tests, through: :user_passed_tests
+  has_many :gists
 
   validates :email, format: { with: EMAIL_FORMAT }
   validates :email, uniqueness: true

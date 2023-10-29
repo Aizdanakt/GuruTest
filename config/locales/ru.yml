@@ -38,7 +38,6 @@ ru:
         number: "Номер вопроса"
         next_button: "Следующий вопрос"
       gist:
-        success: "Гист был успешно создан"
         failure: "Произошла ошибка при сохранении Гист"
 
   admin:
@@ -76,3 +75,7 @@ ru:
         create: "Войти"
       new:
         header: "Войдите во врата Гуру"
+
+  services:
+    gist_params:
+      gist: "Вопрос о %{title} из TestGuru"

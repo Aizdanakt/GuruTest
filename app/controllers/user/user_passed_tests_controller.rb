@@ -20,16 +20,30 @@ class User::UserPassedTestsController < ApplicationController
   def gist
     result = GistQuestionService.new(@user_passed_test.current_question).call
 
-    flash_options = if result.success?
-                      { notice: t('.success')}
+    flash_options = if result[:id].present?
+
+                      gist_url = result[:html_url]
+                      save_gist(gist_url)
+
+                      { notice: gist_url }
                     else
-                      { alert: t('.failure')}
+                      { alert: t('.failure') }
                     end
 
     redirect_to user_user_passed_test_path(@user_passed_test), flash_options
   end
 
   private
+
+  def save_gist(gist_url)
+    gist = current_user.gists.build(
+      body: @user_passed_test.current_question.body,
+      gist_url: gist_url,
+      question: @user_passed_test.current_question
+    )
+
+    gist.save!
+  end
 
   def set_user_passed_test
     @user_passed_test = UserPassedTest.find(params[:id])

@@ -80,6 +80,10 @@ group :test do
 end
 
 gem 'devise', '~> 4.9', '>= 4.9.2'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'faraday'
+gem 'faraday-retry'
 gem 'hotwire-rails', '~> 0.1.3'
+gem 'octokit'
 gem 'rails-i18n'
+

@@ -38,7 +38,6 @@ en:
         number: "Question number"
         next_button: "Next question"
       gist:
-        success: "Gist was successfully created!"
         failure: "An error occurred while saving gist"
 
   admin:
@@ -76,3 +75,6 @@ en:
         create: "Sign in"
       new:
         header: "Enter the Guru Gates"
+  services:
+    gist_params:
+      gist: "A question about %{title} from TestGuru"
