@@ -1,20 +1,13 @@
 <table class="table table-striped table-bordered">
   <thead class="table-dark">
   <tr>
-    <th scope="col">Вопрос</th>
-    <th scope="col">Gist URL</th>
-    <th scope="col">Пользователь</th>
-    <th scope="col">Дата создания</th>
+    <th scope="col"><%= t(".question_header") %></th>
+    <th scope="col"><%= t(".gist_url_header") %></th>
+    <th scope="col"><%= t(".user_email_header") %></th>
+    <th scope="col"><%= t(".created_at_header") %></th>
   </tr>
   </thead>
   <tbody>
-  <% @gists.each do |gist| %>
-    <tr>
-      <td><%= link_to gist.body.truncate(25), admin_question_path(gist.question), target: '_blank' %></td>
-      <td><%= link_to "Ссылка на gist", gist.gist_url, target: '_blank' %></td>
-      <td><%= gist.user.email %></td>
-      <td><%= gist.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
-    </tr>
-  <% end %>
+  <%= render @gists %>
   </tbody>
 </table>

@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to gist.body.truncate(25), admin_question_path(gist.question), target: '_blank' %></td>
+  <td><%= link_to "Ссылка на gist", gist.gist_url, target: '_blank' %></td>
+  <td><%= gist.user.email %></td>
+  <td><%= gist.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
+</tr>

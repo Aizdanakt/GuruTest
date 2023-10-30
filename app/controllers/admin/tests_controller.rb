@@ -36,9 +36,6 @@ class Admin::TestsController < Admin::BaseController
       render :edit
     end
   end
-  def gists
-    @gists = Gist.all
-  end
 
   private
 

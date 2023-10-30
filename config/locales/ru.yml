@@ -26,19 +26,17 @@ ru:
         level: "Уровень"
         number: "Количество вопросов"
 
-    user_passed_tests:
-      result:
-        header: "Тест %{title} успешно завершен!"
-        question_header: "Вопросы"
-        answers_header: "Ответы"
-        correctness_header: "Результат"
-      show:
-        header: "Прохождение теста %{title}"
-        count: "Всего вопросов"
-        number: "Номер вопроса"
-        next_button: "Следующий вопрос"
-      gist:
-        failure: "Произошла ошибка при сохранении Гист"
+  user_passed_tests:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      question_header: "Вопросы"
+      answers_header: "Ответы"
+      correctness_header: "Результат"
+    show:
+      header: "Прохождение теста %{title}"
+      count: "Всего вопросов"
+      number: "Номер вопроса"
+      next_button: "Следующий вопрос"
 
   admin:
     tests:
@@ -53,6 +51,13 @@ ru:
       show:
         header: "Название"
         level: "Уровень"
+    gists:
+      index:
+        question_header: "Вопрос"
+        gist_url_header: "Гист URL"
+        user_email_header: "Пользователь"
+        created_at_header: "Дата создания"
+
 
   tests_mailer:
     completed_test:
@@ -79,3 +84,7 @@ ru:
   services:
     gist_params:
       gist: "Вопрос о %{title} из TestGuru"
+
+  gists:
+    success: "Гист успешно создан. <a href='%{url}' target='_blank'>Ваш Gist</a>"
+    failure: "Произошла ошибка при сохранении Гист"

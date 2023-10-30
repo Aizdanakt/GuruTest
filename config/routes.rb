@@ -17,12 +17,13 @@ Rails.application.routes.draw do
     resources :gists, only: :index
   end
 
-  namespace :user do
-    resources :user_passed_tests, only: %i[show update] do
-      get :result, on: :member
-      post :gist, on: :member
-    end
+  resources :user_passed_tests, only: %i[show update] do
+    get :result, on: :member
 
+    resources :gists, only: :create
+  end
+
+  namespace :user do
     resources :tests, only: :index do
       post :start, on: :member
     end
