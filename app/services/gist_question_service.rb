@@ -12,18 +12,21 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    response = @client.create_gist(gist_params)
+    return unless success?(response)
+
+    create_response(response.html_url, response.id)
+
   end
 
   private
 
-  def create_response(html_url, id)
-    Response.new(html_url, id)
+  def success?(response)
+    response.html_url.present? && response.id.present?
   end
 
-  def create_gist(params)
-    response = @client.create_gist(params)
-    create_response(response.html_url, response.id)
+  def create_response(html_url, id)
+    Response.new(html_url, id)
   end
 
   def gist_params
