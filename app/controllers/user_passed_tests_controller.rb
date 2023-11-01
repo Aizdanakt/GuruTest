@@ -1,4 +1,4 @@
-class User::UserPassedTestsController < ApplicationController
+class UserPassedTestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_passed_test, only: %i[show update result]
 
@@ -11,9 +11,9 @@ class User::UserPassedTestsController < ApplicationController
 
     if @user_passed_test.completed?
       TestsMailer.completed_test(@user_passed_test).deliver_now
-      redirect_to result_user_user_passed_test_path(@user_passed_test)
+      redirect_to result_user_passed_test_path(@user_passed_test)
     else
-      redirect_to user_user_passed_test_path(@user_passed_test)
+      redirect_to user_passed_test_path(@user_passed_test)
     end
   end
 

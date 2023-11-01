@@ -45,3 +45,5 @@
 # other files
 /.idea
 .idea
+
+.env

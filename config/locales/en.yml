@@ -26,17 +26,17 @@ en:
         level: "Level"
         number: "Number of questions"
 
-    user_passed_tests:
-      result:
-        header: "Test %{title} was successfully completed!"
-        question_header: "Questions"
-        answers_header: "Answers"
-        correctness_header: "Correctness"
-      show:
-        header: "Passing the %{title} test"
-        count: "Total questions"
-        number: "Question number"
-        next_button: "Next question"
+  user_passed_tests:
+    result:
+      header: "Test %{title} was successfully completed!"
+      question_header: "Questions"
+      answers_header: "Answers"
+      correctness_header: "Correctness"
+    show:
+      header: "Passing the %{title} test"
+      count: "Total questions"
+      number: "Question number"
+      next_button: "Next question"
 
   admin:
     tests:
@@ -51,6 +51,13 @@ en:
       show:
         header: "Title"
         level: "Level"
+
+    gists:
+      index:
+        question_header: "Question"
+        gist_url_header: "Gist URL"
+        user_email_header: "User"
+        created_at_header: "Created at"
 
   tests_mailer:
     completed_test:
@@ -73,3 +80,11 @@ en:
         create: "Sign in"
       new:
         header: "Enter the Guru Gates"
+
+  services:
+    gist_params:
+      gist: "A question about %{title} from TestGuru"
+
+  gists:
+    success: "Gist successfully created. <a href='%{url}' target='_blank'>Your Gist</a>"
+    failure: "An error occurred while saving gist"
