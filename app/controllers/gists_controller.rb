@@ -4,8 +4,8 @@ class GistsController < ApplicationController
     @user_passed_test = UserPassedTest.find(params[:user_passed_test_id])
     result = GistQuestionService.new(@user_passed_test.current_question).call
 
-    if result
-      gist_url = result[:html_url]
+    if result.success?
+      gist_url = result.html_url
       create_gist(gist_url)
       redirect_to user_passed_test_path(@user_passed_test), notice: t('.success', url: gist_url)
     else

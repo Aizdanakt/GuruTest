@@ -3,7 +3,7 @@
 require 'octokit'
 
 class GistQuestionService
-  Response = Struct.new(:html_url, :id)
+  Response = Struct.new(:html_url, :id, :success?)
 
   def initialize(question, client: default_client)
     @question = question
@@ -13,10 +13,8 @@ class GistQuestionService
 
   def call
     response = @client.create_gist(gist_params)
-    return unless success?(response)
 
-    create_response(response.html_url, response.id)
-
+    create_response(response)
   end
 
   private
@@ -25,8 +23,8 @@ class GistQuestionService
     response.html_url.present? && response.id.present?
   end
 
-  def create_response(html_url, id)
-    Response.new(html_url, id)
+  def create_response(response)
+    Response.new(response.html_url, response.id, success?(response))
   end
 
   def gist_params
