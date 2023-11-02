@@ -83,5 +83,7 @@ end
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'faraday-retry'
 gem 'hotwire-rails', '~> 0.1.3'
+gem 'octicons_helper'
 gem 'octokit'
 gem 'rails-i18n'
+
