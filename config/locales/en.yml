@@ -21,10 +21,10 @@ en:
     tests:
       index:
         header: "Tricky Tests"
-      test:
         title: "Title"
         level: "Level"
         number: "Number of questions"
+        actions: "actions"
 
   user_passed_tests:
     result:
@@ -44,10 +44,10 @@ en:
         success: "Test was successfully created."
       index:
         header: "Tricky Tests"
-      test:
         title: "Title"
         level: "Level"
         number: "Number of questions"
+        actions: "actions"
       show:
         header: "Title"
         level: "Level"

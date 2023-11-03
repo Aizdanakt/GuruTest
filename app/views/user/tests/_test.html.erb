@@ -1,16 +1,8 @@
-<article class="card mt-3">
-  <div class="card-body">
-    <section>
-      <p class="my-2">
-        <%= t(".title") %>: <%= test.title %>
-      </p>
-      <p class="my-2">
-        <%= t(".level") %>: <%= test.level %>
-      </p>
-      <p class="my-2">
-        <%= t(".number") %>: <%= test.questions.count %>
-      </p>
-    </section>
+<tr>
+  <td><%= test.title %></td>
+  <td><%= test.level %></td>
+  <td><%= test.questions.count %></td>
+  <td>
     <%= button_to 'Start', start_user_test_path(test), class: 'btn btn-info text-white' %>
-  </div>
-</article>
+  </td>
+</tr>

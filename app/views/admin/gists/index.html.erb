@@ -1,7 +1,11 @@
 <table class="table table-striped table-bordered">
   <thead class="table-dark">
   <tr>
-    <th scope="col"><%= t(".question_header") %></th>
+    <th scope="col" class="sort-by-title pointer">
+      <%= t(".question_header") %>
+      <%= octicon 'arrow-up', class: 'hide' %>
+      <%= octicon 'arrow-down', class: 'hide' %>
+    </th>
     <th scope="col"><%= t(".gist_url_header") %></th>
     <th scope="col"><%= t(".user_email_header") %></th>
     <th scope="col"><%= t(".created_at_header") %></th>

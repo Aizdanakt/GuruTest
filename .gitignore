@@ -47,3 +47,5 @@
 .idea
 
 .env
+yarn-error.log
+

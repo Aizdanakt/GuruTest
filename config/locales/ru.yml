@@ -21,10 +21,10 @@ ru:
     tests:
       index:
         header: "Доступные тесты"
-      test:
         title: "Название"
         level: "Уровень"
         number: "Количество вопросов"
+        actions: "Действия"
 
   user_passed_tests:
     result:
@@ -44,10 +44,10 @@ ru:
         success: "Тест был успешно создан"
       index:
         header: "Доступные тесты"
-      test:
         title: "Название"
         level: "Уровень"
         number: "Количество вопросов"
+        actions: "Действия"
       show:
         header: "Название"
         level: "Уровень"
