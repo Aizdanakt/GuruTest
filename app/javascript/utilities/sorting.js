@@ -1,7 +1,12 @@
-var control = document.querySelector('.sort-by-title');
+document.addEventListener('turbo:render', initSortByTitle)
+document.addEventListener('DOMContentLoaded', initSortByTitle)
 
-if (control) {
-    control.addEventListener('click', sortRowsByTitle);
+function initSortByTitle() {
+    const control = document.querySelector('.sort-by-title');
+
+    if (control) {
+        control.addEventListener('click', sortRowsByTitle);
+    }
 }
 
 function sortRowsByTitle() {

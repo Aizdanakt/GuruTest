@@ -1,9 +1,8 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_test, only: %i[show edit update destroy]
+  before_action :find_test, only: %i[show edit update destroy update_inline]
+  before_action :find_tests, only: %i[index update_inline]
 
-  def index
-    @tests = Test.all
-  end
+  def index; end
 
   def show
     @questions = @test.questions
@@ -25,7 +24,7 @@ class Admin::TestsController < Admin::BaseController
     if @test.save
       redirect_to admin_tests_path, notice: t('.success')
     else
-      render :new
+      render :new, status: 422
     end
   end
 
@@ -37,6 +36,14 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def test_params
@@ -45,6 +52,10 @@ class Admin::TestsController < Admin::BaseController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_tests
+    @tests = Test.all
   end
 
 end
