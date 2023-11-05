@@ -1,5 +1,8 @@
 <h1><%= t('.header') %></h1>
 
+<%= render 'shared/errors', resource: @test %>
+<%= puts @test.errors.full_messages if @test.present? %>
+
 <table class="table table-striped table-bordered">
   <thead class="table-dark">
   <tr>

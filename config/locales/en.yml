@@ -51,6 +51,8 @@ en:
       show:
         header: "Title"
         level: "Level"
+      form_inline:
+        submit: "Ok"
 
     gists:
       index:
@@ -68,6 +70,8 @@ en:
       logout_header: "Logout"
       login_header: "Login"
       signup_header: "Signup"
+    errors:
+      header: "Number of errors - %{count}"
 
   users:
     registrations:

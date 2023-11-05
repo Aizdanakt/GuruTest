@@ -51,6 +51,8 @@ ru:
       show:
         header: "Название"
         level: "Уровень"
+      form_inline:
+        submit: "Ок"
     gists:
       index:
         question_header: "Вопрос"
@@ -68,6 +70,8 @@ ru:
       logout_header: "Выход"
       login_header: "Войти"
       signup_header: "Регистрация"
+    errors:
+      header: "Количество ошибок - %{count}"
 
   users:
     registrations:
