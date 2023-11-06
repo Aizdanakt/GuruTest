@@ -49,3 +49,5 @@
 .env
 yarn-error.log
 
+
+/config/credentials/production.key
