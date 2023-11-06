@@ -8,7 +8,6 @@
   <td class="align-middle">
     <%= link_to 'Show', admin_test_path(test), class: 'btn btn-info text-white' %>
     <%= link_to 'Edit', edit_admin_test_path(test), data: { test_id: test.id }, class: 'btn btn-info text-white form-inline-link' %>
-    <%= link_to 'Edit', edit_admin_test_path(test), class: 'btn btn-info text-white' %>
     <%= link_to "Delete", admin_test_path(test), class: 'btn btn-info text-white',
                 data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </td>
