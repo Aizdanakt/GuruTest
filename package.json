@@ -9,6 +9,7 @@
     "autoprefixer": "^10.4.15",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
+    "controllers": "^0.0.2",
     "esbuild": "^0.19.3",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.30",
@@ -26,6 +27,7 @@
     "defaults"
   ],
   "devDependencies": {
+    "@rails/ujs": "^7.1.1",
     "jquery": "^3.7.1"
   },
   "browser": {

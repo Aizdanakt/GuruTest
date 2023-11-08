@@ -168,6 +168,11 @@
   dependencies:
     spark-md5 "^3.0.1"
 
+"@rails/ujs@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.1.1.tgz#f8df96e406a2a824084b637880e57c257073cb05"
+  integrity sha512-ywGwWNiqXN3Bb1BifVQTrkWEWcAGLHW3D0JNQMQeu57LsoluRzvnenNLPsmdoDPkrmSIASDXNsJiCIpUzFj8CA==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -295,6 +300,11 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
+
+controllers@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/controllers/-/controllers-0.0.2.tgz#c60cb523d72e5e1ac6f19539b057921cd6c59909"
+  integrity sha512-Xhe4m8rr1reyM9jHIxaJQMR/P7ItoXvYhqFATht/5XMWcuONaFbYUNnV7/6WxR58uc+d4OHU9rLuKYK+5KUopw==
 
 debug@^3.2.7:
   version "3.2.7"
