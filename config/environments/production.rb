@@ -47,6 +47,7 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
@@ -63,7 +64,18 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "TestGuru_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mail.ru',
+    port: 587,
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 
+  config.action_mailer.default_url_options = { host: 'https://testguru-7rcd.onrender.com' }
+  config.action_mailer.default_options = { from: ENV['SMTP_USER_FROM'] }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
