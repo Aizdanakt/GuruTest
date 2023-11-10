@@ -25,6 +25,6 @@
       <%= b.label class: "form-check-label" %>
     </div>
   <% end %>
-  <p><%= link_to 'Gist Question', user_passed_test_gists_path(@user_passed_test), data: {turbo_method: :post} %></p>
+  <p><%= link_to t('.create_gist'), user_passed_test_gists_path(@user_passed_test), data: {turbo_method: :post} %></p>
   <p><%= form.submit t(".next_button"), class: 'btn btn-success' %></p>
 <% end %>

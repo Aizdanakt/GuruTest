@@ -25,6 +25,8 @@ en:
         level: "Level"
         number: "Number of questions"
         actions: "actions"
+      test:
+        start: "Start"
 
   user_passed_tests:
     result:
@@ -32,11 +34,14 @@ en:
       question_header: "Questions"
       answers_header: "Answers"
       correctness_header: "Correctness"
+      yes: "Yes"
+      no: "No"
     show:
       header: "Passing the %{title} test"
       count: "Total questions"
       number: "Question number"
       next_button: "Next question"
+      create_gist: "Create gist"
 
   admin:
     tests:
@@ -51,8 +56,14 @@ en:
       show:
         header: "Title"
         level: "Level"
+        test: "Test"
+        questions: "Questions"
       form_inline:
         submit: "Ok"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
 
     gists:
       index:
@@ -60,6 +71,23 @@ en:
         gist_url_header: "Gist URL"
         user_email_header: "User"
         created_at_header: "Created at"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        question: "Question"
+        answers: "Answers"
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        question: "Question"
+        answer: "Answer"
+        correct: "Correct"
 
   tests_mailer:
     completed_test:
@@ -72,6 +100,13 @@ en:
       signup_header: "Signup"
     errors:
       header: "Number of errors - %{count}"
+    user_menu:
+      feedback: "feedback"
+    admin_menu:
+      gists: "Gists"
+    footer:
+      name: "Aziret"
+      slogan: "Create, explore, unlock - tests that inspire! Educational project at the online school"
 
   users:
     registrations:

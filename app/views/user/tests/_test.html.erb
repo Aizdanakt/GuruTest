@@ -3,6 +3,8 @@
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
   <td>
-    <%= button_to 'Start', start_user_test_path(test), class: 'btn btn-info text-white' %>
+    <%= button_to t('.start'), start_user_test_path(test),
+                  class: 'btn text-white',
+                  style: "background-color: #6610f2;"%>
   </td>
 </tr>

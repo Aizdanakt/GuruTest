@@ -1,8 +1,7 @@
 <h2 style="text-align: center;"><%= t(".header") %></h2>
-
 <div style="display: flex; justify-content: center;">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f| %>
-
+    <%= render 'shared/errors' %>
     <div class="form-group card-body">
       <%= f.label :name, class: "form-label mt-3" %><br />
       <%= f.text_field :name, autocomplete: "name", class: "form-control " %>

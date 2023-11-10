@@ -5,4 +5,6 @@
 import { application } from "./application"
 
 import HelloController from "./hello_controller"
+import I18n from 'i18n-js'
+window.I18n = I18n
 application.register("hello", HelloController)

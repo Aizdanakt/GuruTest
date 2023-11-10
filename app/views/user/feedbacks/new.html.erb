@@ -1,11 +1,11 @@
 <form action="/user/feedbacks" method="post">
   <div class="mb-3">
     <label for="feedback" class="form-label">Feedback</label>
-    <textarea class="form-control" id="feedback" name="feedback" rows="4"></textarea>
+    <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
   </div>
   <div class="mb-3">
     <label for="admin" class="form-label">Select Admin</label>
-    <select class="form-select" id="admin" name="admin">
+    <select class="form-select" id="admin" name="admin" required>
       <%= render 'user/feedbacks/admin' %>
     </select>
   </div>
