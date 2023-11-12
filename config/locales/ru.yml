@@ -106,7 +106,7 @@ ru:
       gists: "Гисты"
     footer:
       name: "Азирет"
-      slogan: "Создавайте, исследуйте, открывайте - тесты, которые вдохновляют! Образовательный проект онлайн-школы"
+      slogan: "Создавайте, исследуйте, открывайте - тесты, которые вдохновляют!"
 
   users:
     registrations:
@@ -117,8 +117,19 @@ ru:
     sessions:
       form:
         create: "Войти"
+        recovery: "Забыли пароль?"
       new:
         header: "Войдите во врата Гуру"
+    passwords:
+      edit:
+        header: "Восстановление пароля"
+        new_password: "Новый пароль"
+        confirm_password: "Подтверждение пароля"
+        submit: "Отправить"
+        chapters: "символов минимум"
+      new:
+        header: "Забыли пароль?"
+        submit: "Отправить письмо"
 
   services:
     gist_params:

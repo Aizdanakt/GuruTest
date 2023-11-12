@@ -13,6 +13,11 @@
         <%= f.label :remember_me, class: "form-check-label" %>
     <% end %>
     </div>
+
+    <div class="text-center">
+    <%= link_to t('.recovery'), new_password_path(resource_name), class: "mb-3" %>
+    </div>
+
     <div style="text-align: center;">
       <%= f.submit t('.create'), class: "btn btn-primary mt-4" %>
     </div>

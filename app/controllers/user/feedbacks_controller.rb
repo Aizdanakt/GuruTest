@@ -6,7 +6,7 @@ class User::FeedbacksController < ApplicationController
   end
 
   def create
-    FeedbacksMailer.feedback(feedback_params, current_user).deliver_now
+    FeedbacksMailer.feedback(feedback_params, current_user).deliver_later
     flash[:notice] = 'Ваш фидбек успешно отправлен'
     redirect_to root_path
   end
