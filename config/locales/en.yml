@@ -53,6 +53,10 @@ en:
         level: "Level"
       form_inline:
         submit: "Ok"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
 
     gists:
       index:

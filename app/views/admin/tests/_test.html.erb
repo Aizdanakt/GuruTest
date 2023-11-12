@@ -1,14 +1,17 @@
 <tr>
   <td class="align-middle">
-    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id, turbo: false } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.questions.count %></td>
   <td class="align-middle">
-    <%= link_to 'Show', admin_test_path(test), class: 'btn btn-info text-white' %>
-    <%= link_to 'Edit', edit_admin_test_path(test), data: { test_id: test.id }, class: 'btn btn-info text-white form-inline-link' %>
-    <%= link_to "Delete", admin_test_path(test), class: 'btn btn-info text-white',
+    <%= link_to t('.show'), admin_test_path(test), class: 'btn text-white', style: "background-color: #6610f2;" %>
+    <%= link_to t('.edit'), edit_admin_test_path(test), data: { test_id: test.id },
+                class: 'btn text-white form-inline-link',
+                style: "background-color: #6610f2;"%>
+    <%= link_to t('.delete'), admin_test_path(test), class: 'btn text-white',
+                style: "background-color: #6610f2;",
                 data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </td>
 </tr>
