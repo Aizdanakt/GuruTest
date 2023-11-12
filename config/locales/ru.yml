@@ -57,7 +57,6 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
-
     gists:
       index:
         question_header: "Вопрос"
