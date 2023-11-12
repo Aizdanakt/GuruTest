@@ -1,15 +1,10 @@
-<nav id="navbar-example2" class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav id="navbar-example2" class="navbar navbar-light" style="background-color: #6610f2;">
   <ul class="nav nav-pills">
 
-    <li class="nav-item">
-      <a class="nav-link text-white" href="<%= admin_tests_path %>">
-        <img src="<%= asset_path('logo/logo.png') %>" alt="Logo" height="24" width="34" style="margin-right: 5px;">
-        Test Guru
-      </a>
-    </li>
+    <%= render 'shared/role_specific_nav' %>
 
     <li class="nav-item">
-      <a class="nav-link text-white" href='<%= admin_gists_path %>'>Gists</a>
+      <a class="nav-link text-white" href='<%= admin_gists_path %>'><%= t('.gists') %></a>
     </li>
 
     <li class="nav-item">

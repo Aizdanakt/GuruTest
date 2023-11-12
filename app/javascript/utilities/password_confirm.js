@@ -1,9 +1,12 @@
-const passwordInput = document.getElementById('user_password');
-const confirmPasswordInput = document.getElementById('user_password_confirmation');
-const matchIcon = document.getElementById('password-match-icon');
+document.addEventListener('DOMContentLoaded', passwordConfirmation);
+document.addEventListener('turbo:render', passwordConfirmation);
 
-if (passwordInput && confirmPasswordInput) {
-    confirmPasswordInput.addEventListener('input', function() {
+function passwordConfirmation() {
+    const passwordInput = document.getElementById('user_password');
+    const confirmPasswordInput = document.getElementById('user_password_confirmation');
+    const matchIcon = document.getElementById('password-match-icon');
+
+    function updateMatchIcon() {
         const password = passwordInput.value;
         const confirmPassword = confirmPasswordInput.value;
 
@@ -16,5 +19,10 @@ if (passwordInput && confirmPasswordInput) {
             matchIcon.innerHTML = '❌';
             matchIcon.style.color = 'red';
         }
-    });
+    }
+
+    if (passwordInput && confirmPasswordInput) {
+        confirmPasswordInput.addEventListener('input', updateMatchIcon);
+        passwordInput.addEventListener('input', updateMatchIcon);
+    }
 }

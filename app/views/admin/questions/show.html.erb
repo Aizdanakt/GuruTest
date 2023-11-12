@@ -1,9 +1,9 @@
 
 <div style="margin-bottom: 30px">
-  <article class="card mt-3" style="border-color: #e3f2fd">
+  <article class="card mt-3" style="border-color: #6610f2">
     <div class="card-body">
       <p class="my-2">
-        <h3><%= @question.test.title %> Question</h3>
+        <h3><%= @question.test.title %> <%= t('.question') %></h3>
       </p>
 
       <p class="my-10">
@@ -14,6 +14,6 @@
 </div>
 
 <section>
-  <h2>Answers</h2>
+  <h2><%= t('.answers') %></h2>
   <%= render @question.answers %>
 </section>

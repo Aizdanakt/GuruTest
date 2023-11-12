@@ -25,6 +25,8 @@ ru:
         level: "Уровень"
         number: "Количество вопросов"
         actions: "Действия"
+      test:
+        start: "Начать"
 
   user_passed_tests:
     result:
@@ -32,11 +34,14 @@ ru:
       question_header: "Вопросы"
       answers_header: "Ответы"
       correctness_header: "Результат"
+      yes: "Да"
+      no: "Нет"
     show:
       header: "Прохождение теста %{title}"
       count: "Всего вопросов"
       number: "Номер вопроса"
       next_button: "Следующий вопрос"
+      create_gist: "Создать Гист"
 
   admin:
     tests:
@@ -51,6 +56,8 @@ ru:
       show:
         header: "Название"
         level: "Уровень"
+        test: "Тест"
+        questions: "Вопросы"
       form_inline:
         submit: "Ок"
       test:
@@ -63,6 +70,23 @@ ru:
         gist_url_header: "Гист URL"
         user_email_header: "Пользователь"
         created_at_header: "Дата создания"
+    questions:
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      show:
+        question: "Вопрос"
+        answers: "Ответы"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      show:
+        question: "Вопрос"
+        answer: "Ответ"
+        correct: "Корректность"
 
 
   tests_mailer:
@@ -76,6 +100,13 @@ ru:
       signup_header: "Регистрация"
     errors:
       header: "Количество ошибок - %{count}"
+    user_menu:
+      feedback: "Обратная связь"
+    admin_menu:
+      gists: "Гисты"
+    footer:
+      name: "Азирет"
+      slogan: "Создавайте, исследуйте, открывайте - тесты, которые вдохновляют!"
 
   users:
     registrations:
@@ -86,8 +117,19 @@ ru:
     sessions:
       form:
         create: "Войти"
+        recovery: "Забыли пароль?"
       new:
         header: "Войдите во врата Гуру"
+    passwords:
+      edit:
+        header: "Восстановление пароля"
+        new_password: "Новый пароль"
+        confirm_password: "Подтверждение пароля"
+        submit: "Отправить"
+        chapters: "символов минимум"
+      new:
+        header: "Забыли пароль?"
+        submit: "Отправить письмо"
 
   services:
     gist_params:

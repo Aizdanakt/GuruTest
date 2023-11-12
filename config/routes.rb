@@ -26,8 +26,11 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
+    resources :feedbacks, only: %i[new create]
+
     resources :tests, only: :index do
       post :start, on: :member
     end
+
   end
 end
