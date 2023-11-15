@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="mt-5">New Badge</h1>
+
+  <%= form_with model: [ :admin, @badge], class: 'mt-3' do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :image, class: 'form-label' %>
+      <%= form.text_field :image, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :rule_id, class: 'form-label' %>
+      <%= form.collection_select :rule_id, @rules, :id, :criteria, { prompt: 'Select a rule' } %>
+    </div>
+
+    <%= form.submit 'Create Badge', class: 'btn btn-primary' %>
+  <% end %>
+</div>

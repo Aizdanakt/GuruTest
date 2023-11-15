@@ -145,3 +145,10 @@ UserPassedTest.create!([
                          { user: ivan, test: basic_test, current_question: interm_test_question_first },
                          { user: hans, test: basic_test, current_question: advanced_test_question_first }
                        ])
+
+# creating rules for badges
+Rule.create!([
+               { criteria: 'all_tests_in_category' },
+               { criteria: 'first_attempt' },
+               { criteria: 'all_tests_of_level' }
+             ])
