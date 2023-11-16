@@ -22,4 +22,12 @@ class Test < ApplicationRecord
   def self.array_of_sorted_tests(category_title)
     sorted_tests_by_category(category_title).pluck(:title)
   end
+
+  def self.tests_with_uniq_level
+    tests = []
+    all.select do |test|
+      tests << test.level
+      test if tests.count(test.level) < 2
+    end
+  end
 end
