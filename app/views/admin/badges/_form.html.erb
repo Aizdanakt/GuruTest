@@ -1,0 +1,35 @@
+<%= form_with model: [ :admin, @badge], data: {turbo: false}, class: 'mt-3' do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :image_url, class: 'form-label' %>
+    <%= form.text_field :image_url, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3" id="rule_select">
+    <%= form.label :rule_id, class: 'form-label' %>
+    <%= form.collection_select :rule_id, @rules, :id, :criteria, { prompt: 'Select a rule' }, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3" id="category_select" style="display: none;">
+    <%= form.label :category_id, class: 'form-label' %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, { prompt: 'Select a category' }, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3" id="test_select" style="display: none;">
+    <%= form.label :test_id, class: 'form-label' %>
+    <%= form.collection_select :test_id, Test.all, :id, :title, { prompt: 'Select a test' }, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3" id="level_select" style="display: none;">
+    <%= form.label :test_level_id, class: 'form-label' %>
+    <%= form.collection_select :test_level_id, Test.tests_with_uniq_level, :id, :level, { prompt: 'Select a level of test' }, class: 'form-control' %>
+  </div>
+
+  <%= form.hidden_field :option_data, id: 'badge_option_data' %>
+
+  <%= form.submit 'Create Badge', class: 'btn btn-primary' %>
+<% end %>

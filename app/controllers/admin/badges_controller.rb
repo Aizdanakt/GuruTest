@@ -7,7 +7,6 @@ class Admin::BadgesController < Admin::BaseController
 
   def create
     @badge = Badge.new(badge_params)
-    puts badge_params.inspect
     if @badge.save
       redirect_to admin_tests_path, notice: 'Badge was successfully created.'
     else
