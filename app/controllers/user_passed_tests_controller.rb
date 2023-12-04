@@ -11,8 +11,8 @@ class UserPassedTestsController < ApplicationController
 
     if @user_passed_test.completed?
 
-      if successful_completion?(@user_passed_test)
-        current_user.earn_achievements(@user_passed_test.test, @user_passed_test.test.category, current_user)
+      if @user_passed_test.success?(@user_passed_test.success_percentage(@user_passed_test))
+        BadgeService.new(@user_passed_test).earn_achievements
       end
 
       TestsMailer.completed_test(@user_passed_test).deliver_later
@@ -23,10 +23,6 @@ class UserPassedTestsController < ApplicationController
   end
 
   private
-
-  def successful_completion?(user_passed_test)
-    user_passed_test.correct_questions == user_passed_test.test.questions.count
-  end
 
   def set_user_passed_test
     @user_passed_test = UserPassedTest.find(params[:id])

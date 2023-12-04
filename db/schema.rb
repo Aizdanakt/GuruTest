@@ -35,16 +35,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_123836) do
   create_table 'badges', force: :cascade do |t|
     t.string 'title', null: false
     t.string 'image_url', null: false
-    t.bigint 'category_id'
-    t.bigint 'test_id'
-    t.bigint 'test_level_id'
+    t.string 'option_data', null: false
     t.bigint 'rule_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['category_id'], name: 'index_badges_on_category_id'
     t.index ['rule_id'], name: 'index_badges_on_rule_id'
-    t.index ['test_id'], name: 'index_badges_on_test_id'
-    t.index ['test_level_id'], name: 'index_badges_on_test_level_id'
   end
 
   create_table 'categories', force: :cascade do |t|
@@ -133,10 +128,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_15_123836) do
   add_foreign_key 'achievements', 'badges'
   add_foreign_key 'achievements', 'users'
   add_foreign_key 'answers', 'questions'
-  add_foreign_key 'badges', 'categories'
   add_foreign_key 'badges', 'rules'
-  add_foreign_key 'badges', 'tests'
-  add_foreign_key 'badges', 'tests', column: 'test_level_id'
   add_foreign_key 'gists', 'questions'
   add_foreign_key 'gists', 'users'
   add_foreign_key 'questions', 'tests'

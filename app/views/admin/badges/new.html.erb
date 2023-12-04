@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="mt-5">New Badge</h1>
 
-  <%= form_with model: [ :admin, @badge], class: 'mt-3' do |form| %>
+  <%= form_with model: [ :admin, @badge], data: {turbo: false}, class: 'mt-3' do |form| %>
     <div class="mb-3">
       <%= form.label :title, class: 'form-label' %>
       <%= form.text_field :title, class: 'form-control' %>
@@ -31,6 +31,8 @@
       <%= form.label :test_level_id, class: 'form-label' %>
       <%= form.collection_select :test_level_id, Test.tests_with_uniq_level, :id, :level, { prompt: 'Select a level of test' }, class: 'form-control' %>
     </div>
+
+    <%= form.hidden_field :option_data, id: 'badge_option_data' %>
 
     <%= form.submit 'Create Badge', class: 'btn btn-primary' %>
   <% end %>
