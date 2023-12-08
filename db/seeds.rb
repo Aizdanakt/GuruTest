@@ -6,9 +6,9 @@ intermediate_category = Category.create!(title: 'intermediate')
 advanced_category = Category.create!(title: 'advanced')
 
 # creating users
-john = User.create!(name: 'John', email: 'john@test.com', password: 'johnjohn')
-ivan = Admin.create!(name: 'admin', email: 'admin@test.com', password: 'adminadmin', type: 'Admin', first_name: 'fn', last_name: 'ln')
-hans = User.create!(name: 'Hans', email: 'hans@test.com', password: 'hanshans')
+john = User.create!(name: 'John', email: 'john1@test.com', password: 'johnjohn')
+ivan = Admin.create!(name: 'admin', email: 'admin1@test.com', password: 'adminadmin', type: 'Admin', first_name: 'fn', last_name: 'ln')
+hans = User.create!(name: 'Hans', email: 'hans1@test.com', password: 'hanshans')
 
 basic_test = Test.create!(title: 'Ruby gems', level: 1, category: basic_category, author: john)
 intermediate_test = Test.create!(title: 'OOP', level: 2, category: intermediate_category, author: ivan)
@@ -145,3 +145,10 @@ UserPassedTest.create!([
                          { user: ivan, test: basic_test, current_question: interm_test_question_first },
                          { user: hans, test: basic_test, current_question: advanced_test_question_first }
                        ])
+
+# creating rules for badges
+Rule.create!([
+               { criteria: 'all_tests_in_category' },
+               { criteria: 'first_attempt' },
+               { criteria: 'all_tests_of_level' }
+             ])

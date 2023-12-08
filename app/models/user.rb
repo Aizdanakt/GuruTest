@@ -3,8 +3,8 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
-         :validatable,
-         :confirmable
+         :validatable
+  # :confirmable
 
   EMAIL_FORMAT = %r{\A[a-zA-Z0-9.!\#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+\z}
 
@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :user_passed_tests, dependent: :destroy
   has_many :tests, through: :user_passed_tests
   has_many :gists, dependent: :destroy
+  has_many :achievements, dependent: :destroy
+  has_many :badges, through: :achievements
 
   validates :email, format: { with: EMAIL_FORMAT }
   validates :email, uniqueness: true

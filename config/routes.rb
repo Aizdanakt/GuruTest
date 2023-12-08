@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges, only: %i[new create]
   end
 
   resources :user_passed_tests, only: %i[show update] do
@@ -32,5 +33,6 @@ Rails.application.routes.draw do
       post :start, on: :member
     end
 
+    resources :badges, only: :index
   end
 end
