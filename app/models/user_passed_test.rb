@@ -30,6 +30,14 @@ class UserPassedTest < ApplicationRecord
     resource.test.questions.index(resource.current_question) + 1
   end
 
+  def time_left
+    return 0 unless start_time.present?
+
+    elapsed_time = (Time.now - start_time).to_i
+    remaining_time = (test.time_limit * 60) - elapsed_time
+    remaining_time.positive? ? remaining_time : 0
+  end
+
   private
 
   def correct_answer?(answer_ids)

@@ -16,6 +16,11 @@
   <p>
     <%= t(".number") %>: <strong><%= @user_passed_test.question_number(@user_passed_test) %></strong>
   </p>
+  <p id="time-left"
+     data-time-left="<%= @user_passed_test.time_left %>"
+     data-redirect-path="<%= result_user_passed_test_path(@user_passed_test) %>">
+    Оставшееся время: <%= @user_passed_test.time_left / 60 %> минут
+  </p>
 </div>
 
 <%= form_with url: user_passed_test_path(@user_passed_test), local: false, method: :put do |form| %>
