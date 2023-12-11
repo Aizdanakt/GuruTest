@@ -12,7 +12,7 @@ class UserPassedTest < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids) && in_time?
     save!
   end
 
@@ -33,12 +33,28 @@ class UserPassedTest < ApplicationRecord
   def time_left
     return 0 unless start_time.present?
 
-    elapsed_time = (Time.now - start_time).to_i
+    elapsed_time = (Time.current - start_time).to_i
     remaining_time = (test.time_limit * 60) - elapsed_time
     remaining_time.positive? ? remaining_time : 0
   end
 
   private
+
+  def test_time_finish
+    created_at + test.time_limit
+  end
+
+  def out_of_time?
+    test_time_finish.future?
+  end
+
+  def in_time?
+    out_of_time?
+  end
+
+  def start_timer
+    start_time
+  end
 
   def correct_answer?(answer_ids)
     correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort

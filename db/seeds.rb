@@ -10,9 +10,9 @@ john = User.create!(name: 'John', email: 'john1@test.com', password: 'johnjohn')
 ivan = Admin.create!(name: 'admin', email: 'admin1@test.com', password: 'adminadmin', type: 'Admin', first_name: 'fn', last_name: 'ln')
 hans = User.create!(name: 'Hans', email: 'hans1@test.com', password: 'hanshans')
 
-basic_test = Test.create!(title: 'Ruby gems', level: 1, category: basic_category, author: john)
-intermediate_test = Test.create!(title: 'OOP', level: 2, category: intermediate_category, author: ivan)
-advanced_test = Test.create!(title: 'SOLID', level: 3, category: advanced_category, author: hans)
+basic_test = Test.create!(title: 'Ruby gems', level: 1, category: basic_category, author: john, time_limit: 1)
+intermediate_test = Test.create!(title: 'OOP', level: 2, category: intermediate_category, author: ivan, time_limit: 2)
+advanced_test = Test.create!(title: 'SOLID', level: 3, category: advanced_category, author: hans, time_limit: 3)
 
 # creating questions for basic_test
 basic_test_question_first = Question.create!(body: 'What task does Device perform?', test: basic_test)
