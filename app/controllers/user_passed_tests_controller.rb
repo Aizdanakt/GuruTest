@@ -9,7 +9,7 @@ class UserPassedTestsController < ApplicationController
   def update
     @user_passed_test.accept!(params[:answer_ids])
 
-    if @user_passed_test.completed? || @user_passed_test.time_left <= 0
+    if @user_passed_test.completed?
 
       BadgeService.new(@user_passed_test).call
       TestsMailer.completed_test(@user_passed_test).deliver_later
