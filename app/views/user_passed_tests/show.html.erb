@@ -17,8 +17,7 @@
     <%= t(".number") %>: <strong><%= @user_passed_test.question_number(@user_passed_test) %></strong>
   </p>
   <p id="time-left"
-     data-time-left="<%= @user_passed_test.time_left %>"
-     data-redirect-path="<%= result_user_passed_test_path(@user_passed_test) %>">
+     data-time-left="<%= @user_passed_test.time_left %>">
   </p>
 </div>
 
