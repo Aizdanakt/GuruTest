@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   resources :user_passed_tests, only: %i[show update] do
     get :result, on: :member
+    get :time_left, om: :member
 
     resources :gists, only: :create
   end

@@ -9,6 +9,7 @@ en:
         category: "Category"
         author: "Author"
         level: "Level"
+        time_limit: "Time limit"
 
       user:
         name: "Name"
