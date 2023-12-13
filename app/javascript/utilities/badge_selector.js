@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', test);
-document.addEventListener('turbo:render', test);
+document.addEventListener('DOMContentLoaded', badge_selector);
+document.addEventListener('turbo:render', badge_selector);
 
-function test() {
+function badge_selector() {
     const ruleSelect = document.getElementById('badge_rule_id');
     const categorySelect = document.getElementById('category_select');
     const testSelect = document.getElementById('test_select');
